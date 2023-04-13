@@ -18,9 +18,18 @@ Widget item(Map<String, dynamic>? itm, Function? onDoubleTap, int? index){
           Expanded(
             child: Container(
               margin: EdgeInsets.only(left: 10),
-              child: Text(
-                "Sold: ${itm['amt'].toString()}", 
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+              child: Column(
+                children: [
+                  Text(
+                    "Price: ${itm['price'].toString()}", 
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  ),
+
+                  Text(
+                    "Sold: ${itm['amt'].toString()}", 
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                  ),
+                ],
               ),
             )
           ),
