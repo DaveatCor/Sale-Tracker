@@ -8,6 +8,7 @@ import 'package:sale_tracker/provider/notification.dart';
 import 'package:sale_tracker/provider/provider.dart';
 import 'package:sale_tracker/service/service.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:vibration/vibration.dart';
 
 enum Status {
   ADD,
@@ -52,8 +53,17 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void onDoubleTap(int index, int value, Status st){
+  void onDoubleTap(int index, int value, Status st) async {
     if (st == Status.ADD){
+      
+      Vibration.vibrate(
+        duration: 100
+      );
+      await Future.delayed(Duration(milliseconds: 300));
+      
+      Vibration.vibrate(
+        duration: 100
+      );
       noticationPro!.notication.insert(0, 
         Message(
           itemPro!.itemList[index]['item'],
@@ -64,6 +74,9 @@ class _MyHomePageState extends State<MyHomePage> {
         )
       );
     } else {
+      Vibration.vibrate(
+        duration: 100
+      );
       noticationPro!.notication.insert(
         0, Message(
           itemPro!.itemList[index]['item'],

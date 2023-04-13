@@ -19,10 +19,11 @@ Widget item(Map<String, dynamic>? itm, Function? onDoubleTap, int? index){
             child: Container(
               margin: EdgeInsets.only(left: 10),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "Price: ${itm['price'].toString()}", 
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    style: TextStyle(fontWeight: FontWeight.w600),
                   ),
 
                   Text(
